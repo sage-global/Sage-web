@@ -1,0 +1,24 @@
+<svg width="100%" height="100%" viewBox="0 0 900 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="dividerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#006AAD" stop-opacity="0.1"/>
+      <stop offset="25%" stop-color="#006AAD"/>
+      <stop offset="50%" stop-color="#35A9EF"/>
+      <stop offset="75%" stop-color="#FB6B31"/>
+      <stop offset="100%" stop-color="#FB6B31" stop-opacity="0.1"/>
+    </linearGradient>
+    <style>
+      @keyframes sweep {
+        0% { stroke-dashoffset: 0; }
+        100% { stroke-dashoffset: -360; }
+      }
+      .wave-line {
+        stroke-dasharray: 8 6;
+        animation: sweep 12s linear infinite;
+      }
+    </style>
+  </defs>
+  <path d="M 0 18 Q 45 4, 90 18 T 180 18 T 270 18 T 360 18 T 450 18 T 540 18 T 630 18 T 720 18 T 810 18 T 900 18" fill="none" stroke="url(#dividerGrad)" stroke-width="2.5" class="wave-line"/>
+  <circle cx="450" cy="18" r="4" fill="#FB6B31"/>
+  <circle cx="450" cy="18" r="8" fill="none" stroke="#35A9EF" stroke-width="1.5" stroke-opacity="0.6"/>
+</svg>
