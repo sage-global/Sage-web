@@ -58,7 +58,7 @@ export default function NewsletterModal({ onClose }: NewsletterModalProps) {
                   <>
                     <Title>Enroll to Our Newsletter</Title>
                     <Subtitle>
-                      Stay updated with SAGE's upcoming RF & wireless hackathons, antenna design workshops, technical articles, and engineering events.
+                      Stay updated with SAGE&apos;s upcoming RF & wireless hackathons, antenna design workshops, technical articles, and engineering events.
                     </Subtitle>
                     <Row>
                       <CustomInput

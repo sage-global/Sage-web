@@ -15,14 +15,6 @@ export default function ContactPage() {
   ];
 
   return (
-    <Page title="Contact & Advisory Inquiries | SAGE — Shastry Associates Global Enterprises">
-      <Head>
-        <meta
-          name="description"
-          content="Contact SAGE for professional RF, microwave, and wireless engineering training programs, corporate consulting, and customized technical workshops."
-        />
-        <link rel="canonical" href="https://shastryassociates.com/contact" />
-      </Head>
     <Page
       title="Contact & Technical Advisory Inquiries"
       description="Contact SAGE for professional RF, microwave, and wireless engineering training programs, corporate consulting, and customized technical workshops."
@@ -30,7 +22,6 @@ export default function ContactPage() {
       ogType="website"
       jsonLd={getBreadcrumbSchema(breadcrumbs)}
     >
-
       {pageHeroes['/contact'] && <PageHero {...pageHeroes['/contact']} />}
 
       <ContactSection>
