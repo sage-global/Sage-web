@@ -117,14 +117,6 @@ function MyApp({ Component, pageProps }: AppProps) {
         </>
       )}
 
-      <Providers>
-        <Modals />
-        <Navbar items={navItems} />
-        <Component {...pageProps} />
-        <WaveCta />
-        <Footer />
-      </Providers>
-
       {/* Vercel Web Analytics & Core Web Vitals */}
       <Analytics />
       <SpeedInsights />
