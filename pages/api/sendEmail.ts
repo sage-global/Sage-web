@@ -29,11 +29,16 @@ function getClientIp(req: NextApiRequest): string {
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-const SAGE_CC_RECIPIENTS = [
-  'aparna82@gmail.com',
-  'snp@fsmail.bradley.edu',
-  'psdaoud@gmail.com',
-];
+const SAGE_TO_RECIPIENTS = process.env.CONTACT_EMAIL_TO
+  ? process.env.CONTACT_EMAIL_TO.split(',').map((e) => e.trim()).filter(Boolean)
+  : ['info@shastryassociates.com'];
+
+const SAGE_CC_RECIPIENTS = process.env.CONTACT_EMAIL_CC
+  ? process.env.CONTACT_EMAIL_CC.split(',').map((e) => e.trim()).filter(Boolean)
+  : [
+      'psdaoud@gmail.com',
+      'vishwasmd.work@gmail.com',
+    ];
 
 export default async function handler(
   req: NextApiRequest,
@@ -284,7 +289,7 @@ Website: https://shastryassociates.com
     // 1. Dispatch notification to SAGE inbox + CC recipients
     const { data: teamData, error: teamError } = await resend.emails.send({
       from: 'SAGE Website <info@shastryassociates.com>',
-      to: ['info@shastryassociates.com'],
+      to: SAGE_TO_RECIPIENTS,
       cc: SAGE_CC_RECIPIENTS,
       replyTo: cleanEmail,
       subject: subjectLine,
