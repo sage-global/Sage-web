@@ -8,8 +8,6 @@
     return str
   }
   /** Internal type. DO NOT USE DIRECTLY. */
-type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
-/** Internal type. DO NOT USE DIRECTLY. */
 export type Incremental<T> = T | { [P in keyof T]?: P extends ' $fragmentName' | '__typename' ? T[P] : never };
 export type Maybe<T> = T | null;
 export type InputMaybe<T> = Maybe<T>;
@@ -323,163 +321,11 @@ export type PostsMutation = {
   body?: InputMaybe<Scalars['JSON']['input']>;
 };
 
-export type StringFilter = {
-  startsWith?: string | null | undefined;
-  eq?: string | null | undefined;
-  exists?: boolean | null | undefined;
-  in?: Array<string | null | undefined> | null | undefined;
-};
 
-export type PostsBodyQuoteFilter = {
-  content?: StringFilter | null | undefined;
-  author?: StringFilter | null | undefined;
-  cite?: StringFilter | null | undefined;
-};
-
-export type PostsBodyArticleImageFilter = {
-  src?: StringFilter | null | undefined;
-  caption?: StringFilter | null | undefined;
-};
-
-export type BooleanFilter = {
-  eq?: boolean | null | undefined;
-  exists?: boolean | null | undefined;
-};
-
-export type PostsBodyCodeFilter = {
-  code?: StringFilter | null | undefined;
-  language?: StringFilter | null | undefined;
-  selectedLines?: StringFilter | null | undefined;
-  withCopyButton?: BooleanFilter | null | undefined;
-  withLineNumbers?: BooleanFilter | null | undefined;
-  caption?: StringFilter | null | undefined;
-};
-
-export type PostsBodyH2Filter = {};
-
-export type PostsBodyH3Filter = {};
-
-export type PostsBodyBrFilter = {};
-
-export type PostsBodyPFilter = {};
-
-export type PostsBodyFilter = {
-  Quote?: PostsBodyQuoteFilter | null | undefined;
-  ArticleImage?: PostsBodyArticleImageFilter | null | undefined;
-  Code?: PostsBodyCodeFilter | null | undefined;
-  h2?: PostsBodyH2Filter | null | undefined;
-  h3?: PostsBodyH3Filter | null | undefined;
-  br?: PostsBodyBrFilter | null | undefined;
-  p?: PostsBodyPFilter | null | undefined;
-};
-
-export type PostsFilter = {
-  title?: StringFilter | null | undefined;
-  description?: StringFilter | null | undefined;
-  date?: StringFilter | null | undefined;
-  tags?: StringFilter | null | undefined;
-  imageUrl?: StringFilter | null | undefined;
-  body?: PostsBodyFilter | null | undefined;
-};
-
-export type PostsPartsFragment = { __typename: 'Posts', title: string, description: string | null, date: string | null, tags: string | null, imageUrl: string | null, body: any };
-
-export type PostsQueryVariables = Exact<{
-  relativePath: string;
-}>;
-
-
-export type PostsQuery = { posts: { __typename: 'Posts', id: string, title: string, description: string | null, date: string | null, tags: string | null, imageUrl: string | null, body: any, _sys: { filename: string, basename: string, hasReferences: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
-
-export type PostsConnectionQueryVariables = Exact<{
-  before?: string | null | undefined;
-  after?: string | null | undefined;
-  first?: number | null | undefined;
-  last?: number | null | undefined;
-  sort?: string | null | undefined;
-  filter?: PostsFilter | null | undefined;
-}>;
-
-
-export type PostsConnectionQuery = { postsConnection: { totalCount: number, pageInfo: { hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges: Array<{ cursor: string, node: { __typename: 'Posts', id: string, title: string, description: string | null, date: string | null, tags: string | null, imageUrl: string | null, body: any, _sys: { filename: string, basename: string, hasReferences: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
-
-export const PostsPartsFragmentDoc = gql`
-    fragment PostsParts on Posts {
-  __typename
-  title
-  description
-  date
-  tags
-  imageUrl
-  body
-}
-    `;
-export const PostsDocument = gql`
-    query posts($relativePath: String!) {
-  posts(relativePath: $relativePath) {
-    ... on Document {
-      _sys {
-        filename
-        basename
-        hasReferences
-        breadcrumbs
-        path
-        relativePath
-        extension
-      }
-      id
-    }
-    ...PostsParts
-  }
-}
-    ${PostsPartsFragmentDoc}`;
-export const PostsConnectionDocument = gql`
-    query postsConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: PostsFilter) {
-  postsConnection(
-    before: $before
-    after: $after
-    first: $first
-    last: $last
-    sort: $sort
-    filter: $filter
-  ) {
-    pageInfo {
-      hasPreviousPage
-      hasNextPage
-      startCursor
-      endCursor
-    }
-    totalCount
-    edges {
-      cursor
-      node {
-        ... on Document {
-          _sys {
-            filename
-            basename
-            hasReferences
-            breadcrumbs
-            path
-            relativePath
-            extension
-          }
-          id
-        }
-        ...PostsParts
-      }
-    }
-  }
-}
-    ${PostsPartsFragmentDoc}`;
 export type Requester<C= {}> = <R, V>(doc: DocumentNode, vars?: V, options?: C) => Promise<R>
   export function getSdk<C>(requester: Requester<C>) {
     return {
-      posts(variables: PostsQueryVariables, options?: C): Promise<{data: PostsQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: PostsQueryVariables, query: string}> {
-        return requester<{data: PostsQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: PostsQueryVariables, query: string}, PostsQueryVariables>(PostsDocument, variables, options);
-      },
-    postsConnection(variables?: PostsConnectionQueryVariables, options?: C): Promise<{data: PostsConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: PostsConnectionQueryVariables, query: string}> {
-        return requester<{data: PostsConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: PostsConnectionQueryVariables, query: string}, PostsConnectionQueryVariables>(PostsConnectionDocument, variables, options);
-      }
+  
     };
   }
   export type Sdk = ReturnType<typeof getSdk>;

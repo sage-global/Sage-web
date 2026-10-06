@@ -65,14 +65,18 @@ const TextImageContainer = styled.div`
 
 const SubText = styled.span`
   font-family: var(--font-body);
-  font-size: 0.92rem;
+  font-size: 1.15rem;
   font-weight: 700;
   letter-spacing: 0.05em;
   color: #ffffff;
-  opacity: 0.95;
+  opacity: 0.98;
   margin-top: 0.2rem;
   text-transform: uppercase;
   white-space: nowrap;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+
+  @media (max-width: 768px) {
+    font-size: 0.95rem;
+  }
 `;
 

@@ -5,83 +5,8 @@ export function gql(strings, ...args) {
   });
   return str;
 }
-export const PostsPartsFragmentDoc = gql`
-    fragment PostsParts on Posts {
-  __typename
-  title
-  description
-  date
-  tags
-  imageUrl
-  body
-}
-    `;
-export const PostsDocument = gql`
-    query posts($relativePath: String!) {
-  posts(relativePath: $relativePath) {
-    ... on Document {
-      _sys {
-        filename
-        basename
-        hasReferences
-        breadcrumbs
-        path
-        relativePath
-        extension
-      }
-      id
-    }
-    ...PostsParts
-  }
-}
-    ${PostsPartsFragmentDoc}`;
-export const PostsConnectionDocument = gql`
-    query postsConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: PostsFilter) {
-  postsConnection(
-    before: $before
-    after: $after
-    first: $first
-    last: $last
-    sort: $sort
-    filter: $filter
-  ) {
-    pageInfo {
-      hasPreviousPage
-      hasNextPage
-      startCursor
-      endCursor
-    }
-    totalCount
-    edges {
-      cursor
-      node {
-        ... on Document {
-          _sys {
-            filename
-            basename
-            hasReferences
-            breadcrumbs
-            path
-            relativePath
-            extension
-          }
-          id
-        }
-        ...PostsParts
-      }
-    }
-  }
-}
-    ${PostsPartsFragmentDoc}`;
 export function getSdk(requester) {
-  return {
-    posts(variables, options) {
-      return requester(PostsDocument, variables, options);
-    },
-    postsConnection(variables, options) {
-      return requester(PostsConnectionDocument, variables, options);
-    }
-  };
+  return {};
 }
 import { createClient } from "tinacms/dist/client";
 const generateRequester = (client) => {

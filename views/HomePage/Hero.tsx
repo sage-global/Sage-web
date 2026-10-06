@@ -17,7 +17,7 @@ export default function Hero() {
         <Contents>
           <Heading>Welcome to your practical platform for wireless technology and services.</Heading>
           <Description>
-            Shastry Associates Global Enterprises (SAGE), provides professional training, workshops, and consulting services, including courses and tutorials, in the fields of radio frequency, microwave, and wireless engineering systems and technologies.
+            <strong>Shastry Associates Global Enterprises (SAGE)</strong> provides professional training, workshops, and consulting services, including courses and tutorials, in the fields of radio frequency, microwave, and wireless engineering systems and technologies.
           </Description>
           <CustomButtonGroup>
             <NextLink href="/courses" passHref>

@@ -26,10 +26,10 @@ const sitemapTree = [
     description: 'Specialized offerings for academia & industry.',
     subItems: [
       { title: 'Courses', href: '/courses', description: 'Comprehensive RF & microwave engineering courses.' },
-      { title: 'Tutorials', href: '/courses#tutorials', description: 'Targeted technical tutorials & design formulas.' },
-      { title: 'Workshops', href: '/services#workshops', description: 'Hands-on practical engineering workshops.' },
-      { title: 'Training', href: '/services#training', description: 'Customized faculty & industry training.' },
-      { title: 'Consulting', href: '/services#consulting', description: 'Expert advisory for 5G, antennas & RF systems.' },
+      { title: 'Tutorials', href: '/tutorials', description: 'Targeted technical tutorials & design formulas.' },
+      { title: 'Workshops', href: '/workshops', description: 'Interactive practical engineering workshops.' },
+      { title: 'Training', href: '/training', description: 'Customized faculty & industry training.' },
+      { title: 'Consulting', href: '/consulting', description: 'Expert advisory for 5G, antennas & RF systems.' },
     ],
   },
   {

@@ -29,8 +29,8 @@ export const cloudinaryUrl = (
 ): string => {
   if (!publicId) return '';
 
-  // If already an absolute external/legacy URL, return as-is
-  if (publicId.startsWith('http://') || publicId.startsWith('https://')) {
+  // If already an absolute external/legacy URL or local public path, return as-is
+  if (publicId.startsWith('http://') || publicId.startsWith('https://') || publicId.startsWith('/')) {
     return publicId;
   }
 

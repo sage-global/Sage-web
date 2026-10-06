@@ -13,18 +13,17 @@ const footerItems: FooterItems = [
     title: '',
     items: [
       { title: 'Courses', href: '/courses' },
-      { title: 'Tutorials', href: '/courses#tutorials' },
-      { title: 'Workshops', href: '/services#workshops' },
-      { title: 'Training', href: '/services#training' },
+      { title: 'Tutorials', href: '/tutorials' },
+      { title: 'Workshops', href: '/workshops' },
+      { title: 'Training', href: '/training' },
       { title: 'Newsletter', href: '/newsletter' },
     ],
   },
   {
     title: '',
     items: [
-      { title: 'Consulting Services', href: '/services#consulting' },
-      { title: 'Contact Us', href: '/contact' },
-      { title: 'info@shastryassociates.com', href: 'mailto:info@shastryassociates.com' },
+      { title: 'Consulting Services', href: '/consulting' },
+      { title: 'Events', href: '/events' },
       { title: 'Photo Gallery', href: '/gallery' },
     ],
   },
@@ -32,7 +31,8 @@ const footerItems: FooterItems = [
     title: '',
     items: [
       { title: 'About SAGE', href: '/about' },
-      { title: 'Events', href: '/events' },
+      { title: 'Contact Us', href: '/contact' },
+      { title: 'info@shastryassociates.com', href: 'mailto:info@shastryassociates.com' },
       { title: 'Privacy Policy', href: '/privacy-policy' },
       { title: 'Sitemap', href: '/sitemap' },
     ],

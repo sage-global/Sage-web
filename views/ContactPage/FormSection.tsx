@@ -357,7 +357,7 @@ const OptionalMark = styled.span`
 
 const Input = styled.input<{ hasError?: boolean }>`
   border: 1.5px solid ${(p) => (p.hasError ? 'rgb(var(--errorColor, 220, 38, 38))' : 'rgb(var(--lineColor))')};
-  background: #ffffff;
+  background: rgb(var(--inputBackground));
   border-radius: 1rem;
   font-size: 1.5rem;
   font-family: var(--font-body);
@@ -368,13 +368,13 @@ const Input = styled.input<{ hasError?: boolean }>`
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
 
   &::placeholder {
-    color: rgba(var(--mutedColor), 0.6);
+    color: rgba(var(--mutedColor), 0.7);
   }
 
   &:focus {
     outline: none;
     border-color: rgb(var(--brandBlue));
-    box-shadow: 0 0 0 4px rgba(var(--brandBlue), 0.12);
+    box-shadow: 0 0 0 4px rgba(var(--brandBlue), 0.15);
   }
 
   &:disabled {
@@ -386,7 +386,7 @@ const Input = styled.input<{ hasError?: boolean }>`
 
 const Select = styled.select`
   border: 1.5px solid rgb(var(--lineColor));
-  background: #ffffff;
+  background: rgb(var(--inputBackground));
   border-radius: 1rem;
   font-size: 1.5rem;
   font-family: var(--font-body);
@@ -396,17 +396,22 @@ const Select = styled.select`
   transition: all 0.2s ease;
   cursor: pointer;
   appearance: none;
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23006aad' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2335A9EF' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
   background-repeat: no-repeat;
   background-position: right 1.6rem center;
   background-size: 1.6rem;
   padding-right: 4.2rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
 
+  option {
+    background: rgb(var(--cardBackground));
+    color: rgb(var(--text));
+  }
+
   &:focus {
     outline: none;
     border-color: rgb(var(--brandBlue));
-    box-shadow: 0 0 0 4px rgba(var(--brandBlue), 0.12);
+    box-shadow: 0 0 0 4px rgba(var(--brandBlue), 0.15);
   }
 
   &:disabled {
@@ -418,7 +423,7 @@ const Select = styled.select`
 
 const Textarea = styled.textarea<{ hasError?: boolean }>`
   border: 1.5px solid ${(p) => (p.hasError ? 'rgb(var(--errorColor, 220, 38, 38))' : 'rgb(var(--lineColor))')};
-  background: #ffffff;
+  background: rgb(var(--inputBackground));
   border-radius: 1rem;
   font-size: 1.5rem;
   font-family: var(--font-body);
@@ -432,13 +437,13 @@ const Textarea = styled.textarea<{ hasError?: boolean }>`
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
 
   &::placeholder {
-    color: rgba(var(--mutedColor), 0.6);
+    color: rgba(var(--mutedColor), 0.7);
   }
 
   &:focus {
     outline: none;
     border-color: rgb(var(--brandBlue));
-    box-shadow: 0 0 0 4px rgba(var(--brandBlue), 0.12);
+    box-shadow: 0 0 0 4px rgba(var(--brandBlue), 0.15);
   }
 
   &:disabled {
