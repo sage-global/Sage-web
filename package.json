@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "tinacms dev -c \"next dev\"",
-    "postinstall": "node -e \"const fs = require('fs'); const file = 'node_modules/next/dist/lib/verifyTypeScriptSetup.js'; if (fs.existsSync(file)) { let content = fs.readFileSync(file, 'utf8'); content = content.replace(/'@types\\/react\\/index\\.d\\.ts'/g, '\\'@types/react/package.json\\'').replace(/'@types\\/node\\/index\\.d\\.ts'/g, '\\'@types/node/package.json\\''); fs.writeFileSync(file, content); }\"",
+    "postinstall": "node -e \"const fs = require('fs'); const file = 'node_modules/next/dist/lib/verifyTypeScriptSetup.js'; if (fs.existsSync(file)) { let content = fs.readFileSync(file, 'utf8'); content = content.replace('const requiredPackages = \\[\\\"typescript\\\"\\]', 'const requiredPackages = []'); fs.writeFileSync(file, content); }\"",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -45,7 +45,8 @@
     "tinacms": "^3.11.0",
     "url-loader": "^4.1.1",
     "use-clipboard-copy": "^0.2.0",
-    "use-resize-observer": "^9.1.0"
+    "use-resize-observer": "^9.1.0",
+    "yet-another-react-lightbox": "^0.21.4"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.11.0",
