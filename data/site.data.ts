@@ -59,8 +59,8 @@ export const navigation: NavItem[] = [
     children: [
       { label: "Training Programs", href: "/training" },
       { label: "Consulting", href: "/consulting" },
-      { label: "Custom Courses", href: "/courses" },
-      { label: "Workshops & Tutorials", href: "/workshops" },
+      { label: "Courses", href: "/courses" },
+      { label: "Tutorials", href: "/tutorials" },
     ],
   },
   { label: "About", href: "/about" },

@@ -27,7 +27,6 @@ const sitemapTree = [
     subItems: [
       { title: 'Courses', href: '/courses', description: 'Comprehensive RF & microwave engineering courses.' },
       { title: 'Tutorials', href: '/tutorials', description: 'Targeted technical tutorials & design formulas.' },
-      { title: 'Workshops', href: '/workshops', description: 'Interactive practical engineering workshops.' },
       { title: 'Training', href: '/training', description: 'Customized faculty & industry training.' },
       { title: 'Consulting', href: '/consulting', description: 'Expert advisory for 5G, antennas & RF systems.' },
     ],

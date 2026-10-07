@@ -29,6 +29,28 @@ module.exports = withBundleAnalyzer({
       { source: '/contact-us', destination: '/contact', permanent: true },
       { source: '/blog', destination: '/newsletter', permanent: true },
       { source: '/blog/:slug*', destination: '/newsletter', permanent: true },
+      {
+        source: '/',
+        has: [
+          {
+            type: 'host',
+            value: '(?<subdomain>.*)rfcourses.com',
+          },
+        ],
+        destination: '/courses',
+        permanent: false,
+      },
+      {
+        source: '/',
+        has: [
+          {
+            type: 'host',
+            value: '(?<subdomain>.*)rftutorials.com',
+          },
+        ],
+        destination: '/tutorials',
+        permanent: false,
+      },
     ];
   },
   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
