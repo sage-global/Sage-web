@@ -60,7 +60,7 @@ export default async function handler(
     });
   }
 
-  const { name, email, phone, topic, description, website, formLoadedAt } = req.body || {};
+  const { name, surname, email, phone, country, state, topic, description, website, formLoadedAt } = req.body || {};
 
   // 2. Honeypot check: If the hidden honeypot field is filled by a bot, silently return 200
   if (website && typeof website === 'string' && website.trim().length > 0) {
@@ -106,9 +106,14 @@ export default async function handler(
     return res.status(400).json({ ok: false, error: 'Message must be 5000 characters or fewer.' });
   }
 
-  const cleanName = name.trim();
+  const cleanFullName = surname && typeof surname === 'string' && surname.trim().length > 0
+    ? `${name.trim()} ${surname.trim()}`
+    : name.trim();
+  const cleanName = cleanFullName;
   const cleanEmail = email.trim();
   const cleanPhone = phone && typeof phone === 'string' ? phone.trim() : '';
+  const cleanCountry = country && typeof country === 'string' ? country.trim() : '';
+  const cleanState = state && typeof state === 'string' ? state.trim() : '';
   const cleanTopic = topic && typeof topic === 'string' && topic.trim().length > 0 ? topic.trim() : 'General Inquiry';
   const cleanDescription = description.trim();
 
@@ -127,24 +132,26 @@ export default async function handler(
   const referer = typeof req.headers.referer === 'string' ? req.headers.referer : 'Direct / Not specified';
   const timestamp = new Date().toUTCString();
 
-  const safeName = escapeHtml(cleanName);
+  const safeName = escapeHtml(cleanFullName);
   const safeEmail = escapeHtml(cleanEmail);
   const safePhone = cleanPhone ? escapeHtml(cleanPhone) : 'Not provided';
+  const safeCountry = cleanCountry ? escapeHtml(cleanCountry) : '';
+  const safeState = cleanState ? escapeHtml(cleanState) : '';
   const safeTopic = escapeHtml(cleanTopic);
   const safeDescription = escapeHtml(cleanDescription).replace(/\r?\n/g, '<br/>');
   const safeReferer = escapeHtml(referer);
 
-  const subjectLine = `[SAGE Website] ${cleanTopic} from ${cleanName}`;
+  const subjectLine = `[SAGE Website] ${cleanTopic} from ${cleanFullName}`;
 
   // Primary Email Body (For SAGE Team + CCs)
   const teamTextBody = `New Website Inquiry received from SAGE Website:
 
 Topic: ${cleanTopic}
 Sender Details:
-- Name: ${cleanName}
+- Name: ${cleanFullName}
 - Email: ${cleanEmail}
 - Phone: ${cleanPhone || 'Not provided'}
-- Sent At: ${timestamp}
+${cleanCountry ? `- Country: ${cleanCountry}\n` : ''}${cleanState ? `- State: ${cleanState}\n` : ''}- Sent At: ${timestamp}
 - Page Referer: ${referer}
 
 Message:
@@ -183,6 +190,8 @@ ${cleanDescription}
           <td style="padding: 8px 0; color: #64748b; font-size: 14px; font-weight: 600;">Phone:</td>
           <td style="padding: 8px 0; font-size: 15px; color: #0f172a;">${cleanPhone ? `<a href="tel:${safePhone}" style="color: #006aad; text-decoration: none;">${safePhone}</a>` : safePhone}</td>
         </tr>
+        ${safeCountry ? `<tr><td style="padding: 8px 0; color: #64748b; font-size: 14px; font-weight: 600;">Country:</td><td style="padding: 8px 0; font-size: 15px; color: #0f172a;">${safeCountry}</td></tr>` : ''}
+        ${safeState ? `<tr><td style="padding: 8px 0; color: #64748b; font-size: 14px; font-weight: 600;">State:</td><td style="padding: 8px 0; font-size: 15px; color: #0f172a;">${safeState}</td></tr>` : ''}
         <tr>
           <td style="padding: 8px 0; color: #64748b; font-size: 14px; font-weight: 600;">Date:</td>
           <td style="padding: 8px 0; font-size: 14px; color: #334155;">${timestamp}</td>

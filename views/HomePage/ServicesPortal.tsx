@@ -51,7 +51,7 @@ const SERVICE_TABS: ServiceTab[] = [
     icon: 'tutorials',
     headline: 'Accessible Tutorials, Resources, Design Insights, & Technical Tools.',
     description:
-      'Practical tutorials bridging electromagnetic theory with circuit design guidelines, S-parameter analysis, link budgets, resources, applications, and tools.',
+      'Practical tutorials bridging electromagnetic theory & RF/wireless applications with circuit design guidelines, resources, and tools.',
     highlights: [
       'A catalog of applied electromagnetics & fundamental concepts',
       'Practical design resources of common & specialized RF circuits',
@@ -78,7 +78,7 @@ const SERVICE_TABS: ServiceTab[] = [
       'Education provided by SAGE associates or in collaboration with SAGE partners',
     ],
     formats: ['Industry', 'Government', 'University', 'Nonprofit', 'Independent'],
-    ctaText: 'Request Training Info',
+    ctaText: 'Explore Training',
     ctaLink: '/training',
     imageBg: 'linear-gradient(135deg, rgba(0, 106, 173, 0.92) 0%, rgba(30, 41, 59, 0.95) 100%)',
     imageUrl: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=900&q=80',
@@ -99,7 +99,7 @@ const SERVICE_TABS: ServiceTab[] = [
     ],
     formats: ['On-Site Workshops', 'Conference Sessions', 'Webinars'],
     ctaText: 'View Workshops',
-    ctaLink: '/workshops',
+    ctaLink: '/events',
     imageBg: 'linear-gradient(135deg, rgba(3, 105, 161, 0.92) 0%, rgba(53, 169, 239, 0.95) 100%)',
     imageUrl: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=900&q=80',
     accentColor: '#FB6B31',
@@ -302,7 +302,7 @@ export default function ServicesPortal() {
           {/* Right Visual Card Panel */}
           <VisualCardPanel bgGradient={activeTab.imageBg} bgImage={activeTab.imageUrl}>
             <CardHeaderOverlay>
-              <BrandMark>SAGE.</BrandMark>
+              <BrandMark>SAGE</BrandMark>
               <CategoryBadge>{activeTab.title}</CategoryBadge>
             </CardHeaderOverlay>
 
