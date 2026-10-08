@@ -109,6 +109,7 @@ export default async function handler(
   const cleanFullName = surname && typeof surname === 'string' && surname.trim().length > 0
     ? `${name.trim()} ${surname.trim()}`
     : name.trim();
+  const cleanName = cleanFullName;
   const cleanEmail = email.trim();
   const cleanPhone = phone && typeof phone === 'string' ? phone.trim() : '';
   const cleanCountry = country && typeof country === 'string' ? country.trim() : '';
