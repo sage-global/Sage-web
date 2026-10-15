@@ -8,7 +8,7 @@ export default function ServicesPage() {
       <PageHero
         title="Our Engineering Services"
         eyebrow="Educational & Technical Advisory"
-        description="Explore professional training, interactive workshops, corporate upskilling, and direct RF/Microwave engineering consulting offered by SAGE."
+        description="Explore professional training, interactive workshops, corporate upskilling, self-paced courses, online tutorials, and direct RF/Microwave engineering consulting."
         breadcrumbs={[
           { label: 'Home', href: '/' },
           { label: 'Services', href: '/services' },

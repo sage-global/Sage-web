@@ -29,6 +29,8 @@ module.exports = withBundleAnalyzer({
       { source: '/contact-us', destination: '/contact', permanent: true },
       { source: '/blog', destination: '/newsletter', permanent: true },
       { source: '/blog/:slug*', destination: '/newsletter', permanent: true },
+      { source: '/workshops', destination: '/events', permanent: false },
+      { source: '/services-missions/workshops', destination: '/events', permanent: false },
       {
         source: '/',
         has: [

@@ -164,7 +164,7 @@ export const pageHeroes: Record<string, PageHeroData> = {
       { label: 'Training Programs', href: '/training' },
     ],
     title: 'Professional Training Programs',
-    description: 'Specialized RF, microwave, and wireless engineering curricula bridging fundamental electromagnetic principles with state-of-the-art industrial practice.',
+    description: 'Professional development entailing educational training through workshops, seminars, and webinars, in addition to courses and tutorials, for beginners and experienced professionals.',
     imageSrc: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=1600&q=80',
   },
 };
