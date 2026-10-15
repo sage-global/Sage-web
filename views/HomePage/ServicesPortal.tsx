@@ -49,7 +49,7 @@ const SERVICE_TABS: ServiceTab[] = [
     title: 'Tutorials',
     badge: 'Applied Guides',
     icon: 'tutorials',
-    headline: 'Accessible Tutorials, Resources, Design Insights, & Technical Tools.',
+    headline: 'Accessible Tutorials, Resources, Design Insights, & Technical Tools',
     description:
       'Practical tutorials bridging electromagnetic theory & RF/wireless applications with circuit design guidelines, resources, and tools.',
     highlights: [
