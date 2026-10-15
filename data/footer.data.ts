@@ -4,7 +4,6 @@ export const footerNav = {
     links: [
       { label: "Courses", href: "/courses" },
       { label: "Tutorials", href: "/tutorials" },
-      { label: "Workshops", href: "/workshops" },
       { label: "Training", href: "/training" },
     ],
   },

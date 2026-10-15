@@ -20,7 +20,7 @@ export default function MissionVisionGoals() {
           </MissionVisionCard>
         </motion.div>
 
-        <GoalsSection>
+        <GoalsSection id="goals">
           <GoalsHeader>
             <GoalsTitle>GOALS</GoalsTitle>
             <GoalsDivider />

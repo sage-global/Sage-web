@@ -17,7 +17,7 @@ const sitemapTree = [
     description: 'Learn about SAGE history, mission, and associate leadership.',
     subItems: [
       { title: 'SAGE Team', href: '/team', description: 'Senior associates, faculty, & engineering experts.' },
-      { title: 'Missions & Goals', href: '/about#mission', description: 'Core vision, objectives, & values.' },
+      { title: 'Mission, Vision & Goals', href: '/about#mission', description: 'Core vision, objectives, & values.' },
     ],
   },
   {
@@ -27,7 +27,6 @@ const sitemapTree = [
     subItems: [
       { title: 'Courses', href: '/courses', description: 'Comprehensive RF & microwave engineering courses.' },
       { title: 'Tutorials', href: '/tutorials', description: 'Targeted technical tutorials & design formulas.' },
-      { title: 'Workshops', href: '/workshops', description: 'Interactive practical engineering workshops.' },
       { title: 'Training', href: '/training', description: 'Customized faculty & industry training.' },
       { title: 'Consulting', href: '/consulting', description: 'Expert advisory for 5G, antennas & RF systems.' },
     ],
@@ -42,10 +41,11 @@ const sitemapTree = [
     ],
   },
   {
-    title: 'News & Media',
-    href: '/newsletter',
-    description: 'Latest SAGE technical digests, publications, and newsletter updates.',
+    title: 'News',
+    href: '/news',
+    description: 'Latest SAGE technical digests, announcements, and newsletter updates.',
     subItems: [
+      { title: 'News & Articles', href: '/news', description: 'Institutional announcements, press releases, and articles.' },
       { title: 'Newsletter & Technical Digest', href: '/newsletter', description: 'Published newsletter editions & technical digests.' },
     ],
   },

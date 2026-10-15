@@ -20,8 +20,7 @@ export default function TeamHero({ activeDiscipline, onSelectDiscipline }: TeamH
             <TitleHighlight>wireless systems experts.</TitleHighlight>
           </HeroTitle>
           <HeroSubtitle>
-            Our international instructors, research fellows, and corporate advisors bring decades of engineering leadership from
-            top research institutions, semiconductor design centers, and industrial laboratories.
+            Our international instructors bring decades of experience from top educational institutions and engineering companies.
           </HeroSubtitle>
 
           <FilterWrapper>

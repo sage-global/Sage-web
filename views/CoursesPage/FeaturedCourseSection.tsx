@@ -78,7 +78,7 @@ export default function FeaturedCourseSection({ course }: FeaturedCourseSectionP
                 <VisualBox>
                   <VisualPattern />
                   <VisualCardContent>
-                    <BrandWatermark>SAGE.</BrandWatermark>
+                    <BrandWatermark>SAGE</BrandWatermark>
                     <VisualCode>FLAGSHIP // {course.categoryId?.toUpperCase() || 'RF'}</VisualCode>
                     <VisualTitle>{course.title}</VisualTitle>
                     <VisualTags>

@@ -31,7 +31,7 @@ function getNavItems(setIsModalOpened: (opened: boolean) => void): NavItems {
       href: '/about',
       subItems: [
         { title: 'Meet Our Team', href: '/team' },
-        { title: 'Mission & Vision', href: '/about#mission' },
+        { title: 'Mission, Vision & Goals', href: '/about#mission' },
       ],
     },
     {
@@ -40,7 +40,6 @@ function getNavItems(setIsModalOpened: (opened: boolean) => void): NavItems {
       subItems: [
         { title: 'Courses', href: '/courses' },
         { title: 'Tutorials', href: '/tutorials' },
-        { title: 'Workshops', href: '/workshops' },
         { title: 'Training', href: '/training' },
         { title: 'Consulting', href: '/consulting' },
       ],
@@ -56,6 +55,10 @@ function getNavItems(setIsModalOpened: (opened: boolean) => void): NavItems {
     {
       title: 'News',
       href: '/news',
+      subItems: [
+        { title: 'News & Articles', href: '/news' },
+        { title: 'Newsletter', href: '/newsletter' },
+      ],
     },
     { title: 'Contact Us', href: '/contact', outlined: true },
   ];

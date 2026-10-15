@@ -14,17 +14,17 @@ const footerItems: FooterItems = [
     items: [
       { title: 'Courses', href: '/courses' },
       { title: 'Tutorials', href: '/tutorials' },
-      { title: 'Workshops', href: '/workshops' },
       { title: 'Training', href: '/training' },
-      { title: 'Newsletter', href: '/newsletter' },
+      { title: 'Consulting Services', href: '/consulting' },
     ],
   },
   {
     title: '',
     items: [
-      { title: 'Consulting Services', href: '/consulting' },
+      { title: 'Newsletter', href: '/newsletter' },
       { title: 'Events', href: '/events' },
       { title: 'Photo Gallery', href: '/gallery' },
+      { title: 'Sitemap', href: '/sitemap' },
     ],
   },
   {
@@ -34,7 +34,6 @@ const footerItems: FooterItems = [
       { title: 'Contact Us', href: '/contact' },
       { title: 'info@shastryassociates.com', href: 'mailto:info@shastryassociates.com' },
       { title: 'Privacy Policy', href: '/privacy-policy' },
-      { title: 'Sitemap', href: '/sitemap' },
     ],
   },
 ];
@@ -42,7 +41,7 @@ const footerItems: FooterItems = [
 export default function Footer() {
   return (
     <FooterWrapper>
-      <Container>
+      <FooterContent>
         <ListContainer>
           {footerItems.map((singleItem, idx) => (
             <FooterList key={idx} {...singleItem} />
@@ -73,7 +72,7 @@ export default function Footer() {
           </ShareBar>
           <Copyright>&copy; {new Date().getFullYear()} Shastry Associates Global Enterprises (SAGE). All rights reserved.</Copyright>
         </BottomBar>
-      </Container>
+      </FooterContent>
     </FooterWrapper>
   );
 }
@@ -100,11 +99,15 @@ function ListItem({ title, href }: SingleFooterListItem) {
 }
 
 const FooterWrapper = styled.footer`
-  padding-top: 4rem;
-  padding-bottom: 3rem;
+  padding-top: 3.5rem;
+  padding-bottom: 2.5rem;
   background: rgb(var(--secondary));
   color: rgb(var(--textSecondary));
   border-top: 1px solid rgba(255, 255, 255, 0.1);
+`;
+
+const FooterContent = styled(Container)`
+  max-width: 72rem !important;
 `;
 
 const ListContainer = styled.div`
@@ -118,7 +121,7 @@ const ListHeader = styled.h4`
   font-family: var(--font-heading);
   font-weight: 700;
   font-size: 1.6rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.2rem;
   color: #FFFFFF;
   letter-spacing: 0.02em;
 `;
@@ -126,16 +129,17 @@ const ListHeader = styled.h4`
 const ListWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  margin-bottom: 2rem;
-  margin-right: 4rem;
+  margin-bottom: 0.8rem;
+  margin-right: 2rem;
 
   & > *:not(:first-child) {
-    margin-top: 0.8rem;
+    margin-top: 0.28rem;
   }
 
   ${media('<=tablet')} {
     flex: 0 45%;
     margin-right: 1rem;
+    margin-bottom: 1.2rem;
   }
 
   ${media('<=phone')} {
@@ -145,7 +149,9 @@ const ListWrapper = styled.div`
 `;
 
 const ListItemWrapper = styled.p`
-  font-size: 1.4rem;
+  font-size: 1.35rem;
+  line-height: 1.35;
+  margin: 0;
 
   a {
     text-decoration: none;
@@ -165,7 +171,7 @@ const ShareBar = styled.div`
 `;
 
 const Copyright = styled.p`
-  font-size: 1.3rem;
+  font-size: 1.25rem;
   color: rgba(255, 255, 255, 0.6);
 
   ${media('<=tablet')} {
@@ -175,8 +181,8 @@ const Copyright = styled.p`
 `;
 
 const BottomBar = styled.div`
-  margin-top: 3rem;
-  padding-top: 2.5rem;
+  margin-top: 1.6rem;
+  padding-top: 1.4rem;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   display: flex;
   justify-content: space-between;

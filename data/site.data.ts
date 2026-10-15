@@ -59,8 +59,8 @@ export const navigation: NavItem[] = [
     children: [
       { label: "Training Programs", href: "/training" },
       { label: "Consulting", href: "/consulting" },
-      { label: "Custom Courses", href: "/courses" },
-      { label: "Workshops & Tutorials", href: "/workshops" },
+      { label: "Courses", href: "/courses" },
+      { label: "Tutorials", href: "/tutorials" },
     ],
   },
   { label: "About", href: "/about" },
@@ -98,7 +98,7 @@ export const pageHeroes: Record<string, PageHeroData> = {
       { label: 'Meet Our Team', href: '/team' },
     ],
     title: 'Meet Our Team',
-    description: 'Our international instructors, research fellows, and corporate advisors bring decades of engineering leadership from top research institutions, semiconductor centers, and industrial laboratories.',
+    description: 'Our international instructors bring decades of experience from top educational institutions and engineering companies.',
     imageSrc: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1600&q=80',
   },
   '/mission': {
@@ -116,7 +116,7 @@ export const pageHeroes: Record<string, PageHeroData> = {
       { label: 'Contact', href: '/contact' },
     ],
     title: 'Get in Touch',
-    description: 'Have questions about our RF, microwave, and wireless training programs, consulting, or customized workshops? Connect with our specialist team.',
+    description: 'Maximize your engineering capabilities with our RF, microwave, and wireless training and consulting. Reach out to our specialist team to get started.',
     imageSrc: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1600&q=80',
   },
   '/events': {
@@ -164,7 +164,7 @@ export const pageHeroes: Record<string, PageHeroData> = {
       { label: 'Training Programs', href: '/training' },
     ],
     title: 'Professional Training Programs',
-    description: 'Specialized RF, microwave, and wireless engineering curricula bridging fundamental electromagnetic principles with state-of-the-art industrial practice.',
+    description: 'Professional development entailing educational training through workshops, seminars, and webinars, in addition to courses and tutorials, for beginners and experienced professionals.',
     imageSrc: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=1600&q=80',
   },
 };

@@ -27,9 +27,9 @@ export default function NewsletterPage() {
   }
 
   return (
-    <Page title="SAGE Newsletters & Digests | Shastry Associates Global Enterprises">
+    <Page title="SAGE Newsletter & Technical Digest | Shastry Associates Global Enterprises">
       <PageHero
-        title="Newsletters & Technical Digests"
+        title="Newsletter & Technical Digest"
         eyebrow="Stay Ahead in RF & Wireless"
         description="Explore our published editions of SAGE Technical Digest covering applied RF engineering, microwave circuit design, antennas, and wireless systems."
         breadcrumbs={[
@@ -53,9 +53,9 @@ export default function NewsletterPage() {
                     <BadgeTag>
                       <Mail size={14} /> Official SAGE Publication
                     </BadgeTag>
-                    <CardTitle>Enroll to Our Newsletter</CardTitle>
+                    <CardTitle>Enroll to Receive our Newsletter</CardTitle>
                     <CardSubtitle>
-                      Stay updated with SAGE&apos;s upcoming RF &amp; wireless hackathons, antenna design workshops, technical articles, and engineering events.
+                      Stay updated with SAGE&apos;s workshops, technical news, achievements, and upcoming events.
                     </CardSubtitle>
                   </CardHeader>
 
@@ -97,9 +97,9 @@ export default function NewsletterPage() {
 
         <HeaderGroup>
           <SectionEyebrow>Published Archive</SectionEyebrow>
-          <SectionTitle>SAGE Technical Digest Issues</SectionTitle>
+          <SectionTitle>SAGE Technical News Updates</SectionTitle>
           <SectionSubtitle>
-            Read through our released newsletter editions, curated articles, and engineering research breakdowns.
+            Read through our released editions of SAGE Technical News Updates, curated articles, and engineering research breakdowns.
           </SectionSubtitle>
         </HeaderGroup>
 

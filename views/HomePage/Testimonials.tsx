@@ -5,16 +5,22 @@ import { media } from 'utils/media';
 
 const TESTIMONIALS = [
   {
-    content: `The advanced RF system design principles and practical circuit guidelines provided by SAGE are unparalleled in clarity and mathematical rigor.`,
-    initials: 'V. S.',
+    content: `Watching students test their own fabricated circuits using Keysight network analyzers and seeing real-world S-parameters match theoretical models is the pinnacle of engineering learning.`,
+    name: 'Dr. K. D. Nayak',
+    role: 'Former Director General, DRDO & SAGE Executive Board',
+    initials: 'K. N.',
   },
   {
-    content: `SAGE's specialized faculty training program transformed our laboratory curriculum. The bridge from theoretical electromagnetics to microwave prototyping is exceptional.`,
-    initials: 'R. K.',
+    content: `SAGE's initiative in bridging university research with practical microwave circuit design guidelines empowers the next generation of RF and wireless systems pioneers.`,
+    name: 'Dr. Surendra Pal',
+    role: 'Former Associate Director, ISRO & SAGE Advisory Board',
+    initials: 'S. P.',
   },
   {
-    content: `Taking SAGE's microwave passive circuits course gave me the exact design formulas and link budget insights needed for my industrial antenna research.`,
-    initials: 'E. R.',
+    content: `The hands-on 5G amplifier design workshop conducted by SAGE and Keysight provided our students and faculty with invaluable industry-level simulation rigor and hardware validation.`,
+    name: 'Dr. Nagamani',
+    role: 'Head of Department, ETE, RVCE',
+    initials: 'N. K.',
   },
 ];
 
@@ -23,7 +29,7 @@ export default function Testimonials() {
     <SectionWrapper>
       <Container>
         <SectionHeader>
-          <Overline>Feedback & Endorsements</Overline>
+          <Overline>Feedback &amp; Endorsements</Overline>
         </SectionHeader>
         <Grid>
           {TESTIMONIALS.map((item, idx) => (
@@ -31,6 +37,10 @@ export default function Testimonials() {
               <QuoteText>“{item.content}”</QuoteText>
               <AuthorRow>
                 <InitialsAvatar>{item.initials}</InitialsAvatar>
+                <AuthorInfo>
+                  <AuthorName>{item.name}</AuthorName>
+                  <AuthorRole>{item.role}</AuthorRole>
+                </AuthorInfo>
               </AuthorRow>
             </CompactCard>
           ))}
@@ -97,17 +107,17 @@ const QuoteText = styled.p`
 const AuthorRow = styled.div`
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 1.2rem;
   margin-top: auto;
 `;
 
 const InitialsAvatar = styled.div`
-  width: 2.8rem;
-  height: 2.8rem;
+  width: 3.2rem;
+  height: 3.2rem;
   border-radius: 50%;
   background: rgb(var(--brandBlue, 0, 106, 173));
   color: #ffffff;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   font-weight: 700;
   display: flex;
   align-items: center;
@@ -115,8 +125,21 @@ const InitialsAvatar = styled.div`
   flex-shrink: 0;
 `;
 
-const InitialsLabel = styled.span`
-  font-size: 1.25rem;
+const AuthorInfo = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+const AuthorName = styled.span`
+  font-size: 1.3rem;
   font-weight: 700;
+  color: rgb(var(--text));
+  line-height: 1.3;
+`;
+
+const AuthorRole = styled.span`
+  font-size: 1.15rem;
+  font-weight: 500;
   color: rgb(var(--mutedColor, 100, 116, 139));
+  line-height: 1.3;
 `;
