@@ -41,10 +41,11 @@ const sitemapTree = [
     ],
   },
   {
-    title: 'News & Media',
-    href: '/newsletter',
-    description: 'Latest SAGE technical digests, publications, and newsletter updates.',
+    title: 'News',
+    href: '/news',
+    description: 'Latest SAGE technical digests, announcements, and newsletter updates.',
     subItems: [
+      { title: 'News & Articles', href: '/news', description: 'Institutional announcements, press releases, and articles.' },
       { title: 'Newsletter & Technical Digest', href: '/newsletter', description: 'Published newsletter editions & technical digests.' },
     ],
   },

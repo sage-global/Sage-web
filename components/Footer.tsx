@@ -107,7 +107,7 @@ const FooterWrapper = styled.footer`
 `;
 
 const FooterContent = styled(Container)`
-  max-width: 92rem !important;
+  max-width: 72rem !important;
 `;
 
 const ListContainer = styled.div`
@@ -129,16 +129,17 @@ const ListHeader = styled.h4`
 const ListWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
   margin-right: 2rem;
 
   & > *:not(:first-child) {
-    margin-top: 0.45rem;
+    margin-top: 0.28rem;
   }
 
   ${media('<=tablet')} {
     flex: 0 45%;
     margin-right: 1rem;
+    margin-bottom: 1.2rem;
   }
 
   ${media('<=phone')} {
@@ -149,6 +150,8 @@ const ListWrapper = styled.div`
 
 const ListItemWrapper = styled.p`
   font-size: 1.35rem;
+  line-height: 1.35;
+  margin: 0;
 
   a {
     text-decoration: none;
@@ -178,8 +181,8 @@ const Copyright = styled.p`
 `;
 
 const BottomBar = styled.div`
-  margin-top: 2.2rem;
-  padding-top: 1.8rem;
+  margin-top: 1.6rem;
+  padding-top: 1.4rem;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   display: flex;
   justify-content: space-between;

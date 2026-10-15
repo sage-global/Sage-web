@@ -49,7 +49,7 @@ const STATIC_PAGES: Array<{ title: string; subtitle: string; description: string
     keywords: ['events', 'workshops', 'seminars', 'tutorials', 'training', 'ieee', 'hands-on'],
   },
   {
-    title: 'Newsletters & Digests',
+    title: 'Newsletter & Technical Digest',
     subtitle: 'Technical Publications & Insights',
     description: 'Read technical digests, whitepapers, and monthly engineering newsletters curated by SAGE experts.',
     url: '/newsletter',

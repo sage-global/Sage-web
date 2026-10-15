@@ -55,6 +55,10 @@ function getNavItems(setIsModalOpened: (opened: boolean) => void): NavItems {
     {
       title: 'News',
       href: '/news',
+      subItems: [
+        { title: 'News & Articles', href: '/news' },
+        { title: 'Newsletter', href: '/newsletter' },
+      ],
     },
     { title: 'Contact Us', href: '/contact', outlined: true },
   ];
