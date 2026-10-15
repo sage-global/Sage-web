@@ -97,9 +97,9 @@ export default function NewsletterPage() {
 
         <HeaderGroup>
           <SectionEyebrow>Published Archive</SectionEyebrow>
-          <SectionTitle>SAGE Technical Digest Issues</SectionTitle>
+          <SectionTitle>SAGE Technical News Updates</SectionTitle>
           <SectionSubtitle>
-            Read through our released editions of SAGE Technical Digest, curated articles, and engineering research breakdowns.
+            Read through our released editions of SAGE Technical News Updates, curated articles, and engineering research breakdowns.
           </SectionSubtitle>
         </HeaderGroup>
 

@@ -50,15 +50,15 @@ export default function NewsletterModal({ onClose }: NewsletterModalProps) {
                 {hasSignedUp && (
                   <MailSentState
                     customTitle="Successfully Enrolled in SAGE Newsletter!"
-                    customDescription="Thank you for enrolling! Below is our archive of published SAGE Technical Digest issues available for immediate reading."
+                    customDescription="Thank you for enrolling! Below is our archive of published SAGE Technical News Updates available for immediate reading."
                     showNewsletters
                   />
                 )}
                 {!hasSignedUp && (
                   <>
-                    <Title>Enroll to Our Newsletter</Title>
+                    <Title>Enroll to Receive our Newsletter</Title>
                     <Subtitle>
-                      Stay updated with SAGE&apos;s upcoming RF & wireless hackathons, antenna design workshops, technical articles, and engineering events.
+                      Stay updated with SAGE&apos;s workshops, technical news, achievements, and upcoming events.
                     </Subtitle>
                     <Row>
                       <CustomInput
