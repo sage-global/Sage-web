@@ -344,6 +344,22 @@ const BreadcrumbWrapper = styled.div`
     font-weight: 600;
   }
 
+  a {
+    color: rgb(var(--brandBlue)) !important;
+    text-decoration: none;
+
+    &:link,
+    &:visited {
+      color: rgb(var(--brandBlue)) !important;
+    }
+
+    &:hover,
+    &:focus {
+      color: rgb(var(--primary)) !important;
+      text-decoration: underline;
+    }
+  }
+
   ${media('<=tablet')} {
     font-size: 1.15rem;
     nav,

@@ -17,7 +17,7 @@ const sitemapTree = [
     description: 'Learn about SAGE history, mission, and associate leadership.',
     subItems: [
       { title: 'SAGE Team', href: '/team', description: 'Senior associates, faculty, & engineering experts.' },
-      { title: 'Missions & Goals', href: '/about#mission', description: 'Core vision, objectives, & values.' },
+      { title: 'Mission, Vision & Goals', href: '/about#mission', description: 'Core vision, objectives, & values.' },
     ],
   },
   {

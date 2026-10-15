@@ -5,7 +5,7 @@ export const mission = missionVisionCombined;
 export const vision = missionVisionCombined;
 
 export const goalsIntro =
-  "The main goals at SAGE are to offer education and training to college students, beginning engineers in industry, and experienced executives in companies, as well as consulting services to industry and academia.";
+  "The main goal at SAGE is to offer education and training to college students, beginning engineers in industry, and experienced executives in companies, as well as consulting services to industry and academia.";
 
 export const goals = [
   "Education entails delivering courses, including the option of receiving professional certification, and providing free accessible tutorials on the company website.",

@@ -36,8 +36,17 @@ export default function StatsBar() {
 
 const Section = styled.section`
   padding: 8rem 0;
-  background: #1A1A1A; /* Dark ink band as requested */
+  background: linear-gradient(135deg, #004578 0%, #006AAD 100%);
   color: #ffffff;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+  html[data-theme='dark'] &,
+  .next-dark-theme & {
+    background: linear-gradient(135deg, #0e2f52 0%, #194877 100%);
+    border-top: 1px solid rgba(56, 189, 248, 0.25);
+    border-bottom: 1px solid rgba(56, 189, 248, 0.25);
+  }
 `;
 
 const Grid = styled.div`

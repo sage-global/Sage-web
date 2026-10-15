@@ -32,23 +32,23 @@ export const GlobalStyle = createGlobalStyle`
 }
 
 .next-dark-theme {
-  --background: 34,43,58; /* Soft Slate Ash #222B3A */
-  --secondBackground: 44,55,73; /* Lighter Ash #2C3749 */
+  --background: 26,48,78; /* Lighter Shade of Dark Navy Blue #1A304E */
+  --secondBackground: 36,64,102; /* Rich Midnight Blue #244066 */
   --text: 248,250,252;
   --textSecondary: 255,255,255;
   --primary: 251,107,49; /* #FB6B31 Vibrant Orange */
   --brandBlue: 56,189,248; /* Sky Blue */
   --skyBlue: 56,189,248; /* Sky Blue */
   --secondary: 15,118,186; /* Bright Steel Blue */
-  --tertiary: 52,65,85; /* Ash Accent */
-  --cardBackground: 44,55,73;
-  --inputBackground: 44,55,73;
+  --tertiary: 46,78,120; /* Slate Blue Accent */
+  --cardBackground: 36,64,102;
+  --inputBackground: 36,64,102;
   --navbarBackground: 15,118,186;
-  --modalBackground: 34,43,58;
+  --modalBackground: 26,48,78;
   --errorColor: 220,38,38;
   --logoColor: #38bdf8;
-  --lineColor: 71,85,105; /* Soft Slate Border */
-  --mutedColor: 160,174,192; /* Lighter Muted Ash */
+  --lineColor: 62,96,140; /* Soft Blue-Gray Border */
+  --mutedColor: 170,192,218; /* High Contrast Soft Ash Blue */
 }
 
 :root {
@@ -143,6 +143,11 @@ svg {
 /* A elements that don't have a class get default styles */
 a:not([class]) {
   text-decoration-skip-ink: auto;
+}
+
+/* Prevent default browser visited purple link color */
+a:visited {
+  color: inherit;
 }
 
 /* Make images easier to work with */

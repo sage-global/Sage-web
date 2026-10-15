@@ -368,7 +368,13 @@ const BreadcrumbLink = styled.a`
   text-decoration: none;
   transition: color 0.2s ease;
 
-  &:hover {
+  &:link,
+  &:visited {
+    color: rgb(var(--brandBlue)) !important;
+  }
+
+  &:hover,
+  &:focus {
     color: rgb(var(--primary));
     text-decoration: underline;
   }

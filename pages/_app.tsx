@@ -31,7 +31,7 @@ function getNavItems(setIsModalOpened: (opened: boolean) => void): NavItems {
       href: '/about',
       subItems: [
         { title: 'Meet Our Team', href: '/team' },
-        { title: 'Mission & Vision', href: '/about#mission' },
+        { title: 'Mission, Vision & Goals', href: '/about#mission' },
       ],
     },
     {
