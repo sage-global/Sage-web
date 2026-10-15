@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import styled, { keyframes } from 'styled-components';
-import { User, Mail, Phone, Tag, MessageSquare, Send, Loader2, ShieldCheck, AlertCircle } from 'lucide-react';
+import { User, Mail, Phone, Tag, MessageSquare, Send, Loader2, ShieldCheck, AlertCircle, MapPin } from 'lucide-react';
 import Button from 'components/Button';
 import { trackEvent } from 'utils/analytics';
 import { media } from 'utils/media';
@@ -11,6 +11,7 @@ interface EmailPayload {
   name: string;
   email: string;
   phone?: string;
+  stateCountry?: string;
   topic?: string;
   description: string;
   website?: string;
@@ -154,7 +155,7 @@ export default function FormSection() {
           </FieldGroup>
         </Row>
 
-        {/* Row 2: Phone Number (Optional) and Inquiry Topic */}
+        {/* Row 2: Phone Number (Optional) and State/Country */}
         <Row>
           <FieldGroup>
             <Label htmlFor="phone">
@@ -175,21 +176,40 @@ export default function FormSection() {
           </FieldGroup>
 
           <FieldGroup>
-            <Label htmlFor="topic">
-              <Tag size={14} />
-              <span>Topic of Inquiry <RequiredMark>*</RequiredMark></span>
+            <Label htmlFor="stateCountry">
+              <MapPin size={14} />
+              <span>State/Country <OptionalMark>(Optional)</OptionalMark></span>
             </Label>
-            <Select id="topic" disabled={isSubmitting} {...register('topic')}>
-              {INQUIRY_TOPICS.map((topic) => (
-                <option key={topic} value={topic}>
-                  {topic}
-                </option>
-              ))}
-            </Select>
+            <Input
+              id="stateCountry"
+              type="text"
+              placeholder="e.g. California, USA or Bangalore, India"
+              disabled={isSubmitting}
+              hasError={!!errors.stateCountry}
+              {...register('stateCountry', {
+                maxLength: { value: 100, message: 'State/Country must be 100 characters or fewer' },
+              })}
+            />
+            {errors.stateCountry && <FieldErrorMessage>{errors.stateCountry.message}</FieldErrorMessage>}
           </FieldGroup>
         </Row>
 
-        {/* Row 3: Message Textarea */}
+        {/* Row 3: Inquiry Topic */}
+        <FieldGroup>
+          <Label htmlFor="topic">
+            <Tag size={14} />
+            <span>Topic of Inquiry <RequiredMark>*</RequiredMark></span>
+          </Label>
+          <Select id="topic" disabled={isSubmitting} {...register('topic')}>
+            {INQUIRY_TOPICS.map((topic) => (
+              <option key={topic} value={topic}>
+                {topic}
+              </option>
+            ))}
+          </Select>
+        </FieldGroup>
+
+        {/* Row 4: Message Textarea */}
         <FieldGroup>
           <Label htmlFor="description">
             <MessageSquare size={14} />
@@ -197,7 +217,7 @@ export default function FormSection() {
           </Label>
           <Textarea
             id="description"
-            placeholder="Please describe your requirements, training objectives, or technical consulting needs..."
+            placeholder="Include your general inquiry, training requests, or consulting needs."
             disabled={isSubmitting}
             hasError={!!errors.description}
             {...register('description', {
@@ -226,7 +246,7 @@ export default function FormSection() {
 
           <PrivacyNotice>
             <ShieldCheck size={14} />
-            <span>Confidential & secure. No spam.</span>
+            <span>Confidential & secure.</span>
           </PrivacyNotice>
         </ActionFooter>
       </Form>

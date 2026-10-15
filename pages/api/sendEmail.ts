@@ -60,7 +60,7 @@ export default async function handler(
     });
   }
 
-  const { name, surname, email, phone, country, state, topic, description, website, formLoadedAt } = req.body || {};
+  const { name, surname, email, phone, country, state, stateCountry, location, topic, description, website, formLoadedAt } = req.body || {};
 
   // 2. Honeypot check: If the hidden honeypot field is filled by a bot, silently return 200
   if (website && typeof website === 'string' && website.trim().length > 0) {
@@ -112,7 +112,9 @@ export default async function handler(
   const cleanName = cleanFullName;
   const cleanEmail = email.trim();
   const cleanPhone = phone && typeof phone === 'string' ? phone.trim() : '';
-  const cleanCountry = country && typeof country === 'string' ? country.trim() : '';
+  const cleanCountry = country && typeof country === 'string' && country.trim().length > 0
+    ? country.trim()
+    : (stateCountry && typeof stateCountry === 'string' ? stateCountry.trim() : (location && typeof location === 'string' ? location.trim() : ''));
   const cleanState = state && typeof state === 'string' ? state.trim() : '';
   const cleanTopic = topic && typeof topic === 'string' && topic.trim().length > 0 ? topic.trim() : 'General Inquiry';
   const cleanDescription = description.trim();
@@ -190,7 +192,7 @@ ${cleanDescription}
           <td style="padding: 8px 0; color: #64748b; font-size: 14px; font-weight: 600;">Phone:</td>
           <td style="padding: 8px 0; font-size: 15px; color: #0f172a;">${cleanPhone ? `<a href="tel:${safePhone}" style="color: #006aad; text-decoration: none;">${safePhone}</a>` : safePhone}</td>
         </tr>
-        ${safeCountry ? `<tr><td style="padding: 8px 0; color: #64748b; font-size: 14px; font-weight: 600;">Country:</td><td style="padding: 8px 0; font-size: 15px; color: #0f172a;">${safeCountry}</td></tr>` : ''}
+        ${safeCountry ? `<tr><td style="padding: 8px 0; color: #64748b; font-size: 14px; font-weight: 600;">State / Country:</td><td style="padding: 8px 0; font-size: 15px; color: #0f172a;">${safeCountry}</td></tr>` : ''}
         ${safeState ? `<tr><td style="padding: 8px 0; color: #64748b; font-size: 14px; font-weight: 600;">State:</td><td style="padding: 8px 0; font-size: 15px; color: #0f172a;">${safeState}</td></tr>` : ''}
         <tr>
           <td style="padding: 8px 0; color: #64748b; font-size: 14px; font-weight: 600;">Date:</td>

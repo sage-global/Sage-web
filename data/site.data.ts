@@ -116,7 +116,7 @@ export const pageHeroes: Record<string, PageHeroData> = {
       { label: 'Contact', href: '/contact' },
     ],
     title: 'Get in Touch',
-    description: 'Have questions about our RF, microwave, and wireless training programs, consulting, or customized workshops? Connect with our specialist team.',
+    description: 'Maximize your engineering capabilities with our RF, microwave, and wireless training and consulting. Reach out to our specialist team to get started.',
     imageSrc: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1600&q=80',
   },
   '/events': {
