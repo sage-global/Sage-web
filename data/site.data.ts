@@ -98,7 +98,7 @@ export const pageHeroes: Record<string, PageHeroData> = {
       { label: 'Meet Our Team', href: '/team' },
     ],
     title: 'Meet Our Team',
-    description: 'Our international instructors, research fellows, and corporate advisors bring decades of engineering leadership from top research institutions, semiconductor centers, and industrial laboratories.',
+    description: 'Our international instructors bring decades of experience from top educational institutions and engineering companies.',
     imageSrc: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1600&q=80',
   },
   '/mission': {
