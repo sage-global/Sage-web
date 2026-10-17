@@ -17,7 +17,7 @@ export default function Homepage({ posts }: InferGetStaticPropsType<typeof getSt
   return (
     <>
       <SEOHead
-        title="SAGE | Professional RF, Microwave & Wireless Engineering Education"
+        title="SAGE | RF, Microwave & Wireless Engineering"
         description={DEFAULT_DESCRIPTION}
         canonicalPath="/"
         ogType="website"
