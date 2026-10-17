@@ -4,7 +4,7 @@ export const SITE_URL = 'https://shastryassociates.com';
 export const DEFAULT_OG_IMAGE = `${SITE_URL}/sage-og-card.png`;
 export const SITE_NAME = 'SAGE — Shastry Associates Global Enterprises';
 export const DEFAULT_DESCRIPTION =
-  'SAGE provides expert-led training, consulting, workshops, and courses in radio frequency, microwave, applied electromagnetics, antennas, and wireless communication systems.';
+  'SAGE provides expert-led training, consulting, and courses in RF, microwave, applied electromagnetics, antennas, and wireless systems.';
 
 export interface BreadcrumbItem {
   label: string;
@@ -12,11 +12,11 @@ export interface BreadcrumbItem {
 }
 
 /**
- * Builds the canonical title formatted with site standard
+ * Builds the canonical title formatted with site standard (kept <= 60 chars)
  */
 export function formatTitle(title: string): string {
   if (title.includes('SAGE')) return title;
-  return `${title} | SAGE — Shastry Associates Global Enterprises`;
+  return `${title} | SAGE`;
 }
 
 /**
