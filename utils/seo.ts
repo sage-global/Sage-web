@@ -1,6 +1,8 @@
 import { TeamMember } from 'sage-data';
 
-export const SITE_URL = 'https://shastryassociates.com';
+export const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL ||
+  (process.env.NEXT_PUBLIC_VERCEL_URL ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}` : 'https://shastryassociates.com');
 export const DEFAULT_OG_IMAGE = `${SITE_URL}/sage-og-card.png`;
 export const SITE_NAME = 'SAGE — Shastry Associates Global Enterprises';
 export const DEFAULT_DESCRIPTION =
